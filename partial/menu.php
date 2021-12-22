@@ -6,13 +6,13 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto text-dark">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="index.php">Home</a>
               <a class="nav-link" href="product.php">Product</a>
-              <a class="nav-link" href="#">Order</a>
+              <a class="nav-link" href="order.php">Order</a>
               <a class="nav-link" href="#">Contact</a>
             </div>
             <div class="navbar-nav ms-auto">
-              <a class="nav-link" href="#">Sign Up</a>
+              <a class="nav-link" href="signup.php">Sign Up</a>
               <a class="nav-link" href="login.php">Login</a>
             </div>
           </div>
