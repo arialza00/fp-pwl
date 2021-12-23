@@ -1,48 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Login</title>
-    <style>
-        .divider:after,
-        .divider:before {
-          content: "";
-          flex: 1;
-          height: 1px;
-          background: #eee;
-        }
-        .h-custom {
-          height: calc(100% - 73px);
-        }
-        @media (max-width: 450px) {
-          .h-custom {
-            height: 100%;
-          }
-        }
-      </style>
-</head>
-<body>
+<?php
+  include("partial/header.php");
+  include("env.php");
+
+  if(isset($_POST["login"])){
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+  }
+
+  $result = mysqli_query($con, "SELECT * FROM tbl_admin WHERE username ='$username' AND password = '$password'");
+
+  if($result->num_rows > 0) {
+    $row = mysqli_fetch_assoc($result);
+    $_SESSION['username'] = $row['username'];
+    header("Location: admin-index.php");
+  }else{
+    echo "<script>alert('Username atau password Anda salah. Silahkan coba lagi!')</script>";
+  }
+?>
     <div class="container">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class=" col-lg-6 col-xl-6 my-lg-5 py-lg-5">
             <img src="img/assets/download.png" class="img-fluid text-center" alt="">
           </div>
           <div class="col-md-8 col-lg-6 col-xl-5 offset-xl-1 my-lg-5 py-lg-5">
-            <form> 
+            <form action="" method="post"> 
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input type="email" id="form3Example3" class="form-control form-control-lg" placeholder="Enter a valid email address">
-                <label class="form-label" for="form3Example3">Email address</label>
+                <input type="text" name="username" id="username" class="form-control form-control-lg" placeholder="Enter a Username">
+                <label class="form-label" for="username">Username</label>
               </div>
   
               <!-- Password input -->
               <div class="form-outline mb-3">
-                <input type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Enter password">
-                <label class="form-label" for="form3Example4">Password</label>
+                <input type="password" name="password" id="password" class="form-control form-control-lg" placeholder="Enter a Password">
+                <label class="form-label" for="password" >Password</label>
               </div>
   
               <div class="d-flex justify-content-between align-items-center">
@@ -57,8 +48,8 @@
               </div>
   
               <div class="text-center text-lg-start mt-4 pt-2">
-                <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-                <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!" class="link-danger">Register</a></p>
+                <button type="submit" name="login" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="signup.php" class="link-danger">Register</a></p>
               </div>
   
             </form>

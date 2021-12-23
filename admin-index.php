@@ -1,6 +1,7 @@
 <?php 
 include("partial/header.php");
-include("partial/menu.php")?>
+include("partial/menu.php");
+include("env.php")?>
 <div class="main-content">
             <div class="wrapper">
                 <h1>Dashboard</h1>
@@ -20,7 +21,7 @@ include("partial/menu.php")?>
                         //Sql Query 
                         $sql = "SELECT * FROM tbl_category";
                         //Execute Query
-                        $res = mysqli_query($conn, $sql);
+                        $res = mysqli_query($con, $sql);
                         //Count Rows
                         $count = mysqli_num_rows($res);
                     ?>

@@ -35,7 +35,6 @@ function registrasi($data){
         </script>";
         return false;
     }
-    $password= password_hash($password,PASSWORD_DEFAULT);
 
     mysqli_query($con,"INSERT INTO tbl_admin VALUES(NULL,'$fullname','$username','$password')");
 

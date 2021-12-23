@@ -20,7 +20,7 @@
     <div class="container justify-content-center">
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <div class="col">
-        <div class="card h-100 rounded"style="background:url(img/assets/bakpia.jpeg) no-repeat;background-size: cover;">
+        <div class="card h-100 rounded"style="background:url(img/assets/bakpia.jpeg) no-repeat ; background-size: cover;">
           <div class="card-body text-center text-white">
             <h5 class="card-title fs-3" style="margin-top: 300px;">Bakpia Pathok</h5>
             <p class="card-text fs-5">Rp.15.000,-</p>

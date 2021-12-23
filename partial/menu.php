@@ -12,7 +12,6 @@
               <a class="nav-link" href="#">Contact</a>
             </div>
             <div class="navbar-nav ms-auto">
-              <a class="nav-link" href="signup.php">Sign Up</a>
               <a class="nav-link" href="login.php">Login</a>
             </div>
           </div>
