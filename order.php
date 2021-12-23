@@ -13,11 +13,11 @@
 <section class="food-search">
         <div class="container">
             
-            <h2 class="text-center text-white">Fill this form to confirm your order.</h2>
+            <h2 class="text-center text-white">Selesaikan Pesananmu</h2>
 
-            <form action="" method="POST" class="order">
+            <form action="" method="POST" class="row g-3">
                 <fieldset>
-                    <legend>Selected Food</legend>
+                    <legend>Pilihan Makanan</legend>
 
                     <div class="food-menu-img">
                         <?php 
@@ -48,7 +48,7 @@
                         <input type="hidden" name="price" value="<?php echo $price; ?>">
 
                         <div class="order-label">Quantity</div>
-                        <input type="number" name="qty" class="input-responsive" value="1" required>
+                        <input type="number" name="qty" class="form-control" value="1" required>
                         
                     </div>
 
@@ -56,19 +56,24 @@
                 
                 <fieldset>
                     <legend>Delivery Details</legend>
-                    <div class="order-label">Full Name</div>
-                    <input type="text" name="full-name" placeholder="Contoh : Mak Erot" class="input-responsive" required>
-
-                    <div class="order-label">Phone Number</div>
-                    <input type="tel" name="contact" placeholder="Contoh : 081xxxxxx" class="input-responsive" required>
-
-                    <div class="order-label">Email</div>
-                    <input type="email" name="email" placeholder="Contoh : hi@gmail.com" class="input-responsive" required>
-
-                    <div class="order-label">Address</div>
-                    <textarea name="address" rows="10" placeholder="Contoh : Jalan, Kota, Provinsi" class="input-responsive" required></textarea>
-
-                    <input type="submit" name="submit" value="Konfirmasi Pesanan" class="btn btn-primary">
+                    <div class="form-outline mb-4">
+                        <input type="text" id="full-name" class="form-control" required>
+                        <label class="form-label" for="form4Example1">Name</label>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="tel" id="contact" class="form-control" required>
+                        <label class="form-label" for="form4Example1">No. Telpon</label>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="text" id="email" class="form-control" />
+                        <label class="form-label" for="form4Example1">Email</label>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="text" id="address" class="form-control" />
+                        <label class="form-label" for="form4Example1">Alamat</label>
+                    </div>
+                    
+                    <button type="submit" value="Konfirmasi Pesanan" class="btn btn-primary btn-block mb-4">Konfirmasi Pesanan</button>
                 </fieldset>
 
             </form>
