@@ -9,7 +9,7 @@
               <a class="nav-link" href="index.php">Home</a>
               <a class="nav-link" href="product.php">Product</a>
               <a class="nav-link" href="order.php">Order</a>
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="contact.php">Contact</a>
             </div>
             <div class="navbar-nav ms-auto">
               <a class="nav-link" href="login.php">Login</a>

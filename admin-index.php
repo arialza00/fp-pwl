@@ -1,94 +1,88 @@
 <?php 
 include("partial/header.php");
-include("partial/menu.php");
+include("admin-menu.php");
 include("env.php")?>
-<div class="main-content">
-            <div class="wrapper">
-                <h1>Dashboard</h1>
-                <br><br>
-                <?php 
-                    if(isset($_SESSION['login']))
-                    {
-                        echo $_SESSION['login'];
-                        unset($_SESSION['login']);
-                    }
-                ?>
-                <br><br>
+<div class="container px-4">
+    <div class="wrapper pt-5 text-center">
+        <h1>Dashboard</h1>
+            <?php 
+                if(isset($_SESSION['login']))
+                {
+                    echo $_SESSION['login'];
+                    unset($_SESSION['login']);
+                }
+            ?>
+        <div class="row pt-3 pb-5 align-items-start">
+        <div class="col text-center">
 
-                <div class="col-4 text-center">
+            <?php 
+            //Sql Query 
+            $sql = "SELECT * FROM tbl_category";
+                //Execute Query
+                $res = mysqli_query($con, $sql);
+                //Count Rows
+                $count = mysqli_num_rows($res);
+            ?>
 
-                    <?php 
-                        //Sql Query 
-                        $sql = "SELECT * FROM tbl_category";
-                        //Execute Query
-                        $res = mysqli_query($con, $sql);
-                        //Count Rows
-                        $count = mysqli_num_rows($res);
-                    ?>
+            <h1><?php echo $count; ?></h1>
+            Categories
+            </div>
 
-                    <h1><?php echo $count; ?></h1>
-                    <br />
-                    Categories
-                </div>
+        <div class="col text-center">
 
-                <div class="col-4 text-center">
+            <?php 
+                //Sql Query 
+                $sql2 = "SELECT * FROM tbl_food";
+                //Execute Query
+                $res2 = mysqli_query($con, $sql2);
+                    //Count Rows
+                $count2 = mysqli_num_rows($res2);
+            ?>
 
-                    <?php 
-                        //Sql Query 
-                        $sql2 = "SELECT * FROM tbl_food";
-                        //Execute Query
-                        $res2 = mysqli_query($conn, $sql2);
-                        //Count Rows
-                        $count2 = mysqli_num_rows($res2);
-                    ?>
+            <h1><?php echo $count2; ?></h1>
+            Foods
+            </div>
 
-                    <h1><?php echo $count2; ?></h1>
-                    <br />
-                    Foods
-                </div>
+        <div class="col text-center">
+                
+            <?php 
+                //Sql Query 
+                $sql3 = "SELECT * FROM tbl_order";
+                //Execute Query
+                $res3 = mysqli_query($con, $sql3);
+                //Count Rows
+                $count3 = mysqli_num_rows($res3);
+            ?>
 
-                <div class="col-4 text-center">
+            <h1><?php echo $count3; ?></h1>
+            Total Orders
+            </div>
+
+        <div class="col text-center">
+
+            <?php 
+                //Creat SQL Query to Get Total Revenue Generated
+                //Aggregate Function in SQL
+                $sql4 = "SELECT SUM(total) AS Total FROM tbl_order WHERE status='Delivered'";
+
+                //Execute the Query
+                $res4 = mysqli_query($con, $sql4);
+
+                //Get the VAlue
+                $row4 = mysqli_fetch_assoc($res4);
                     
-                    <?php 
-                        //Sql Query 
-                        $sql3 = "SELECT * FROM tbl_order";
-                        //Execute Query
-                        $res3 = mysqli_query($conn, $sql3);
-                        //Count Rows
-                        $count3 = mysqli_num_rows($res3);
-                    ?>
+                    //GEt the Total REvenue
+                $total_revenue = $row4['Total'];
 
-                    <h1><?php echo $count3; ?></h1>
-                    <br />
-                    Total Orders
-                </div>
+            ?>
 
-                <div class="col-4 text-center">
-                    
-                    <?php 
-                        //Creat SQL Query to Get Total Revenue Generated
-                        //Aggregate Function in SQL
-                        $sql4 = "SELECT SUM(total) AS Total FROM tbl_order WHERE status='Delivered'";
+            <h1>$<?php echo $total_revenue; ?></h1>
+            Revenue Generated
+            </div>
 
-                        //Execute the Query
-                        $res4 = mysqli_query($conn, $sql4);
-
-                        //Get the VAlue
-                        $row4 = mysqli_fetch_assoc($res4);
-                        
-                        //GEt the Total REvenue
-                        $total_revenue = $row4['Total'];
-
-                    ?>
-
-                    <h1>$<?php echo $total_revenue; ?></h1>
-                    <br />
-                    Revenue Generated
-                </div>
-
-                <div class="clearfix"></div>
-
+            <div class="clearfix"></div>
             </div>
         </div>
-
-<?php include('partials/footer.php') ?>
+    </div>
+</div>
+<?php include('partial/footer.php') ?>
