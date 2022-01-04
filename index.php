@@ -1,5 +1,5 @@
 <?php include("partial/header.php"); include("env.php");include("partial/menu.php")?> 
-<div class="p-5 mb-4 bg-light rounded-3" style="background:rgba(0, 0, 0, 1) url(/img/assets/background.jpeg) no-repeat center; background-size: cover; height: 600px;background-blend-mode: darken;">
+<div class="p-5 mb-4 bg-light rounded-3" style="background: url(img/assets/background.jpeg) no-repeat center; background-size: cover; height: 600px;">
   <div class="container text-center center-block">
     <h1 class="display-5 fw-bold mt-5 mb-5">Enjoy Your Favorite Snack<br>With Fast and Easy Delivery<br>With StarSnacks</h1>
     <p class="col fs-4 md-12">Find Your Favorite Snack</p>

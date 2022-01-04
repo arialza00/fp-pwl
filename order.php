@@ -70,106 +70,82 @@
         <div class="form-outline mb-4">
             <input type="text" id="address" placeholder="Alamat" class="form-control" />
         </div>
-        <!-- Default radio -->
-        <div class="d-flex justify-content-center">
-        <div class="form-check">
-        <input
-            class="form-check-input"
-            type="radio"
-            name="flexRadioDefault"
-            id="flexRadioDefault1"
-        />
-        <img src="img/assets/bni.jpeg" alt="" srcset="" class="form-check-label img-thumbnail h-50 w-50" for="flexRadioDefault1">
-        </div>
-
-        <!-- Default checked radio -->
-        <div class="form-check">
-        <input
-            class="form-check-input"
-            type="radio"
-            name="flexRadioDefault"
-            id="flexRadioDefault2"
-            checked
-        />
-        <img src="img/assets/bri.jpeg" alt="" srcset="" class="img-thumbnail h-50 w-50">
-        </div>
-        <div class="form-check">
-        <input
-            class="form-check-input"
-            type="radio"
-            name="flexRadioDefault"
-            id="flexRadioDefault3"
-            checked
-        />
-        <img src="img/assets/mandiri.jpeg" alt="" srcset=""class="img-thumbnail h-50 w-50">
-        </div>
-        </div>
-        
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Bank</option>
+            <option name="bank[]" value="bni">BNI</option>
+            <option name="bank[]" value="bri">BRI</option>
+            <option name="bank[]" value="mandiri">Mandiri</option>
+        </select>
+        <br>
         <button type="submit" value="Konfirmasi Pesanan" class="btn btn-primary btn-block mb-4">Konfirmasi Pesanan</button>
     </fieldset>
 
 </form>
+        <?php
+            if(isset($_POST['submit']))
+            {
+                // Get all the details from the form
 
-<?php 
+                $food = $_POST['food'];
+                $price = $_POST['price'];
+                $qty = $_POST['qty'];
 
-                //CHeck whether submit button is clicked or not
-                if(isset($_POST['submit']))
-                {
-                    // Get all the details from the form
+                $total = $price * $qty; // total = price x qty 
 
-                    $food = $_POST['food'];
-                    $price = $_POST['price'];
-                    $qty = $_POST['qty'];
+                $order_date = date("Y-m-d h:i:sa"); //Order DAte
 
-                    $total = $price * $qty; // total = price x qty 
+                $status = "Ordered";  // Ordered, On Delivery, Delivered, Cancelled
 
-                    $order_date = date("Y-m-d h:i:sa"); //Order DAte
-
-                    $status = "Ordered";  // Ordered, On Delivery, Delivered, Cancelled
-
-                    $customer_name = $_POST['full-name'];
-                    $customer_contact = $_POST['contact'];
-                    $customer_email = $_POST['email'];
-                    $customer_address = $_POST['address'];
+                $customer_name = $_POST['full-name'];
+                $customer_contact = $_POST['contact'];
+                $customer_email = $_POST['email'];
+                $customer_address = $_POST['address'];
+                $customer_bank = $_POST['bank'];
 
 
-                    //Save the Order in Databaase
-                    //Create SQL to save the data
-                    $sql2 = "INSERT INTO tbl_order SET 
-                        food = '$food',
-                        price = $price,
-                        qty = $qty,
-                        total = $total,
-                        order_date = '$order_date',
-                        status = '$status',
-                        customer_name = '$customer_name',
-                        customer_contact = '$customer_contact',
-                        customer_email = '$customer_email',
-                        customer_address = '$customer_address'
-                    ";
+                //Save the Order in Databaase
+                //Create SQL to save the data
+                $sql2 = "INSERT INTO `tbl_order` 
+                (`food`,
+                `price`,
+                `qty`,
+                `total`,
+                `order_date`,
+                `status`,
+                `customer_name`,
+                `customer_contact`,
+                `customer_email`,
+                `customer_address`,
+                `customer_bank`) VALUES( 
+                '".$food."',
+                '".$price."',
+                '".$qty."',
+                '".$total."',
+                '".$order_date."',
+                '".$status."',
+                '".$customer_name."',
+                '".$customer_contact."',
+                '".$customer_email."',
+                '".$customer_address."',
+                '".$customer_bank."')";
 
-                    //echo $sql2; die();
+                //echo $sql2; die();
 
-                    //Execute the Query
-                    $res2 = mysqli_query($con, $sql2);
+                //Execute the Query
+                $res2 = mysqli_query($con, $sql2) or exit("Error query: <b>".$sql2."</b>.");
 
-                    //Check whether query executed successfully or not
-                    if($res2==true)
-                    {
-                        //Query Executed and Order Saved
-                        $_SESSION['order'] = "<div class='success text-center'>Food Ordered Successfully.</div>";
-                    }
-                    else
-                    {
-                        //Failed to Save Order
-                        $_SESSION['order'] = "<div class='error text-center'>Failed to Order Food.</div>";
-                    }
-
+                //Check whether query executed successfully or not
+                if($res2->connect_errno){
+                    echo "Koneksi database gagal karena".$res2->connect_error;
+                    exit;
+                }else{
+                    session_start();
+                    $_SESSION['Flash_data'] = '<div class="alert alert-success">Data Berhasil di tambahkan.</div>';
+                    header("Location: order.php");
                 }
-            
-            ?>
 
-</h2>
+            }
+        ?>
             </div>
         </div>
 </section>
