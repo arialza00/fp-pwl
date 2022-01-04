@@ -72,9 +72,9 @@
         </div>
         <select class="form-select" aria-label="Default select example">
             <option selected>Bank</option>
-            <option name="bank[]" value="bni">BNI</option>
-            <option name="bank[]" value="bri">BRI</option>
-            <option name="bank[]" value="mandiri">Mandiri</option>
+            <option name="bank" value="bni">BNI</option>
+            <option name="bank" value="bri">BRI</option>
+            <option name="bank" value="mandiri">Mandiri</option>
         </select>
         <br>
         <button type="submit" value="Konfirmasi Pesanan" class="btn btn-primary btn-block mb-4">Konfirmasi Pesanan</button>
