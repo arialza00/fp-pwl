@@ -145,6 +145,342 @@
                     }
                 ?>
             </div>
+            <div class="card" style="width: 18rem;">
+            <?php 
+                    //Display Foods that are Active
+                    $sql = "SELECT * FROM tbl_food WHERE id='4'";
+
+                    //Execute the Query
+                    $res=mysqli_query($con, $sql);
+
+                    //Count Rows
+                    $count = mysqli_num_rows($res);
+
+                    //CHeck whether the foods are availalable or not
+                    if($count>0)
+                    {
+                        //Foods Available
+                        while($row=mysqli_fetch_assoc($res))
+                        {
+                            //Get the Values
+                            $id = $row['id'];
+                            $title = $row['title'];
+                            $description = $row['description'];
+                            $price = $row['price'];
+                            $image_name = $row['image_name'];
+                            ?>
+                            <?php 
+                    if($image_name=="")
+                    {
+                        echo "<div class='error'>Image not Available.</div>";
+                    }
+                    else
+                    {
+                    ?>
+                <img src="img/assets/<?php echo $image_name; ?> <?php }?>" class="card-img-top " alt="..." style="height: 260px;width:260px">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $title; ?></h5>
+                    <p class="card-text">Rp.<?php echo $price; ?></p>
+                    <a href="order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order</a>
+                </div>
+                <?php
+                        }
+                    }
+                    else
+                    {
+                        //Food not Available
+                        echo "<div class='error'>Food not found.</div>";
+                    }
+                ?>
+            </div>
+            <div class="card" style="width: 18rem;">
+            <?php 
+                    //Display Foods that are Active
+                    $sql = "SELECT * FROM tbl_food WHERE id='5'";
+
+                    //Execute the Query
+                    $res=mysqli_query($con, $sql);
+
+                    //Count Rows
+                    $count = mysqli_num_rows($res);
+
+                    //CHeck whether the foods are availalable or not
+                    if($count>0)
+                    {
+                        //Foods Available
+                        while($row=mysqli_fetch_assoc($res))
+                        {
+                            //Get the Values
+                            $id = $row['id'];
+                            $title = $row['title'];
+                            $description = $row['description'];
+                            $price = $row['price'];
+                            $image_name = $row['image_name'];
+                            ?>
+                            <?php 
+                    if($image_name=="")
+                    {
+                        echo "<div class='error'>Image not Available.</div>";
+                    }
+                    else
+                    {
+                    ?>
+                <img src="img/assets/<?php echo $image_name; ?> <?php }?>" class="card-img-top " alt="..." style="height: 260px;width:260px">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $title; ?></h5>
+                    <p class="card-text">Rp.<?php echo $price; ?></p>
+                    <a href="order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order</a>
+                </div>
+                <?php
+                        }
+                    }
+                    else
+                    {
+                        //Food not Available
+                        echo "<div class='error'>Food not found.</div>";
+                    }
+                ?>
+            </div>
+            <div class="card" style="width: 18rem;">
+            <?php 
+                    //Display Foods that are Active
+                    $sql = "SELECT * FROM tbl_food WHERE id='6'";
+
+                    //Execute the Query
+                    $res=mysqli_query($con, $sql);
+
+                    //Count Rows
+                    $count = mysqli_num_rows($res);
+
+                    //CHeck whether the foods are availalable or not
+                    if($count>0)
+                    {
+                        //Foods Available
+                        while($row=mysqli_fetch_assoc($res))
+                        {
+                            //Get the Values
+                            $id = $row['id'];
+                            $title = $row['title'];
+                            $description = $row['description'];
+                            $price = $row['price'];
+                            $image_name = $row['image_name'];
+                            ?>
+                            <?php 
+                    if($image_name=="")
+                    {
+                        echo "<div class='error'>Image not Available.</div>";
+                    }
+                    else
+                    {
+                    ?>
+                <img src="img/assets/<?php echo $image_name; ?> <?php }?>" class="card-img-top " alt="..." style="height: 260px;width:260px">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $title; ?></h5>
+                    <p class="card-text">Rp.<?php echo $price; ?></p>
+                    <a href="order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order</a>
+                </div>
+                <?php
+                        }
+                    }
+                    else
+                    {
+                        //Food not Available
+                        echo "<div class='error'>Food not found.</div>";
+                    }
+                ?>
+            </div>
+            <div class="card" style="width: 18rem;">
+            <?php 
+                    //Display Foods that are Active
+                    $sql = "SELECT * FROM tbl_food WHERE id='7'";
+
+                    //Execute the Query
+                    $res=mysqli_query($con, $sql);
+
+                    //Count Rows
+                    $count = mysqli_num_rows($res);
+
+                    //CHeck whether the foods are availalable or not
+                    if($count>0)
+                    {
+                        //Foods Available
+                        while($row=mysqli_fetch_assoc($res))
+                        {
+                            //Get the Values
+                            $id = $row['id'];
+                            $title = $row['title'];
+                            $description = $row['description'];
+                            $price = $row['price'];
+                            $image_name = $row['image_name'];
+                            ?>
+                            <?php 
+                    if($image_name=="")
+                    {
+                        echo "<div class='error'>Image not Available.</div>";
+                    }
+                    else
+                    {
+                    ?>
+                <img src="img/assets/<?php echo $image_name; ?> <?php }?>" class="card-img-top " alt="..." style="height: 260px;width:260px">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $title; ?></h5>
+                    <p class="card-text">Rp.<?php echo $price; ?></p>
+                    <a href="order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order</a>
+                </div>
+                <?php
+                        }
+                    }
+                    else
+                    {
+                        //Food not Available
+                        echo "<div class='error'>Food not found.</div>";
+                    }
+                ?>
+            </div>
+            <div class="card" style="width: 18rem;">
+            <?php 
+                    //Display Foods that are Active
+                    $sql = "SELECT * FROM tbl_food WHERE id='8'";
+
+                    //Execute the Query
+                    $res=mysqli_query($con, $sql);
+
+                    //Count Rows
+                    $count = mysqli_num_rows($res);
+
+                    //CHeck whether the foods are availalable or not
+                    if($count>0)
+                    {
+                        //Foods Available
+                        while($row=mysqli_fetch_assoc($res))
+                        {
+                            //Get the Values
+                            $id = $row['id'];
+                            $title = $row['title'];
+                            $description = $row['description'];
+                            $price = $row['price'];
+                            $image_name = $row['image_name'];
+                            ?>
+                            <?php 
+                    if($image_name=="")
+                    {
+                        echo "<div class='error'>Image not Available.</div>";
+                    }
+                    else
+                    {
+                    ?>
+                <img src="img/assets/<?php echo $image_name; ?> <?php }?>" class="card-img-top " alt="..." style="height: 260px;width:260px">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $title; ?></h5>
+                    <p class="card-text">Rp.<?php echo $price; ?></p>
+                    <a href="order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order</a>
+                </div>
+                <?php
+                        }
+                    }
+                    else
+                    {
+                        //Food not Available
+                        echo "<div class='error'>Food not found.</div>";
+                    }
+                ?>
+            </div>
+            <div class="card" style="width: 18rem;">
+            <?php 
+                    //Display Foods that are Active
+                    $sql = "SELECT * FROM tbl_food WHERE id='9'";
+
+                    //Execute the Query
+                    $res=mysqli_query($con, $sql);
+
+                    //Count Rows
+                    $count = mysqli_num_rows($res);
+
+                    //CHeck whether the foods are availalable or not
+                    if($count>0)
+                    {
+                        //Foods Available
+                        while($row=mysqli_fetch_assoc($res))
+                        {
+                            //Get the Values
+                            $id = $row['id'];
+                            $title = $row['title'];
+                            $description = $row['description'];
+                            $price = $row['price'];
+                            $image_name = $row['image_name'];
+                            ?>
+                            <?php 
+                    if($image_name=="")
+                    {
+                        echo "<div class='error'>Image not Available.</div>";
+                    }
+                    else
+                    {
+                    ?>
+                <img src="img/assets/<?php echo $image_name; ?> <?php }?>" class="card-img-top " alt="..." style="height: 260px;width:260px">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $title; ?></h5>
+                    <p class="card-text">Rp.<?php echo $price; ?></p>
+                    <a href="order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order</a>
+                </div>
+                <?php
+                        }
+                    }
+                    else
+                    {
+                        //Food not Available
+                        echo "<div class='error'>Food not found.</div>";
+                    }
+                ?>
+            </div>
+            <div class="card" style="width: 18rem;">
+            <?php 
+                    //Display Foods that are Active
+                    $sql = "SELECT * FROM tbl_food WHERE id='10'";
+
+                    //Execute the Query
+                    $res=mysqli_query($con, $sql);
+
+                    //Count Rows
+                    $count = mysqli_num_rows($res);
+
+                    //CHeck whether the foods are availalable or not
+                    if($count>0)
+                    {
+                        //Foods Available
+                        while($row=mysqli_fetch_assoc($res))
+                        {
+                            //Get the Values
+                            $id = $row['id'];
+                            $title = $row['title'];
+                            $description = $row['description'];
+                            $price = $row['price'];
+                            $image_name = $row['image_name'];
+                            ?>
+                            <?php 
+                    if($image_name=="")
+                    {
+                        echo "<div class='error'>Image not Available.</div>";
+                    }
+                    else
+                    {
+                    ?>
+                <img src="img/assets/<?php echo $image_name; ?> <?php }?>" class="card-img-top " alt="..." style="height: 260px;width:260px">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $title; ?></h5>
+                    <p class="card-text">Rp.<?php echo $price; ?></p>
+                    <a href="order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order</a>
+                </div>
+                <?php
+                        }
+                    }
+                    else
+                    {
+                        //Food not Available
+                        echo "<div class='error'>Food not found.</div>";
+                    }
+                ?>
+            </div>
         </div>
     </div>
 <?php include("partial/footer.php") ?>

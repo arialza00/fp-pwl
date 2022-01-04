@@ -15,13 +15,12 @@
 </div>   
 
 <main>
-  <div>
+  <div class="">
     <h1 class="text-center" style="padding-top: 50px;padding-bottom:25px">Our Popular Snacks</h1>
     <div class="container justify-content-center">
-    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
-      <div class="col-4"style="height: 300px; width:300px">
-      <?php 
-                //Display Foods that are Active
+    <div class="row row-cols-1 row-cols-mb-3 g-4 justify-content-center ">
+      
+                <?php
                 $sql = "SELECT * FROM tbl_food WHERE id='1'";
 
                 //Execute the Query
@@ -54,6 +53,8 @@
                 {
                 //Image Available
                 ?>
+      <div class="col-4"style="height: 300px; width:300px">
+              
         <div class="card h-100 rounded"style="background:url(img/assets/<?php echo $image_name; ?> <?php }?>); no-repeat ; background-size: cover;">
           <div class="card-body text-center text-white">
             <h5 class="card-title fs-3" style="margin-top: 140px;"><?php echo $title; ?></h5>
