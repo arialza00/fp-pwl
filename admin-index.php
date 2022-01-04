@@ -25,7 +25,7 @@ include("env.php")?>
             ?>
 
             <h1><?php echo $count; ?></h1>
-            Categories
+            Kategori
             </div>
 
         <div class="col text-center">
@@ -40,7 +40,7 @@ include("env.php")?>
             ?>
 
             <h1><?php echo $count2; ?></h1>
-            Foods
+            Produk
             </div>
 
         <div class="col text-center">
@@ -55,7 +55,7 @@ include("env.php")?>
             ?>
 
             <h1><?php echo $count3; ?></h1>
-            Total Orders
+            Jumlah Pesanan
             </div>
 
         <div class="col text-center">
@@ -63,7 +63,7 @@ include("env.php")?>
             <?php 
                 //Creat SQL Query to Get Total Revenue Generated
                 //Aggregate Function in SQL
-                $sql4 = "SELECT SUM(total) AS Total FROM tbl_order WHERE status='Delivered'";
+                $sql4 = "SELECT SUM(total) AS Total FROM tbl_order WHERE status='Ordered'";
 
                 //Execute the Query
                 $res4 = mysqli_query($con, $sql4);
@@ -76,8 +76,8 @@ include("env.php")?>
 
             ?>
 
-            <h1>$<?php echo $total_revenue; ?></h1>
-            Revenue Generated
+            <h1>Rp.<?php echo $total_revenue; ?></h1>
+            Keuntungan
             </div>
 
             <div class="clearfix"></div>

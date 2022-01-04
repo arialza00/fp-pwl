@@ -6,10 +6,9 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto text-dark">
-              <a class="nav-link" href="#">Home</a>
-              <a class="nav-link" href="product.php">Product</a>
-              <a class="nav-link" href="#">Order</a>
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="admin-index.php">Home</a>
+              <a class="nav-link" href="manage-order.php">Manage Order</a>
+              <a class="nav-link" href="manage-contact.php">Manage Contact</a>
             </div>
             <div class="navbar-nav ms-auto">
               <a class="nav-link" href="#">Logout</a>
