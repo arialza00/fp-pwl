@@ -1,5 +1,5 @@
 <footer>
-      <div>
+      <div class="fixed-bottom">
         <p class="text-center" style="margin-top: 10px;">Copyright © 2021 StarSnack - All Rights Reserved - Made In Yogyakarta</p>
       </div>
     </footer>

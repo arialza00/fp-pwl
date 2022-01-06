@@ -60,7 +60,7 @@
                                                     <div class="dropdown-menu"
                                                     aria-labelledby="dropdownMenuButton">
                                                         <a class="dropdown-item" href="edit.php?id=<?=$data['id']?>">Edit</a>
-                                                        <a class="dropdown-item" href="order-delete.php?id=<?=$data['id']?>">Hapus</a>
+                                                        <a class="dropdown-item" href="contact-delete.php?id=<?=$data['id']?>">Hapus</a>
                                                     </div>
                                                 </div>
                                             </td>

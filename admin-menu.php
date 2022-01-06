@@ -11,7 +11,7 @@
               <a class="nav-link" href="manage-contact.php">Manage Contact</a>
             </div>
             <div class="navbar-nav ms-auto">
-              <a class="nav-link" href="#">Logout</a>
+              <a class="nav-link" href="index.php">Logout</a>
             </div>
           </div>
         </div>

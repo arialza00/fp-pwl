@@ -35,16 +35,17 @@
                                             <th>Quantity</th>
                                             <th>Total Harga</th>
                                             <th>Status</th>
+                                            <th>Waktu Pemesanan</th>
                                             <th>Nama Pelanggan</th>
                                             <th>Email Pelanggan</th>
+                                            <th>No. Telepon</th>
                                             <th>Alamat Pelanggan</th>
                                             <th>Bank yang digunakan Pelanggan</th>
-                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php 
-                                            $sql = "select id,food,price,qty,total,order_date,status,customer_name,customer_contact,customer_address,customer_bank from tbl_order";
+                                            $sql = "select id,food,price,qty,total,order_date,status,customer_name,customer_contact,customer_email,customer_address,customer_bank from tbl_order";
                                             $hasil = mysqli_query($con,$sql) or exit("Error query: <b>".$sql."</b>.");
 
                                             while($data = mysqli_fetch_assoc($hasil)){
@@ -59,6 +60,7 @@
                                             <td><?php echo $data['status']; ?></td>
                                             <td><?php echo $data['customer_name']; ?></td>
                                             <td><?php echo $data['customer_contact']; ?></td>
+                                            <td><?php echo $data['customer_email']; ?></td>
                                             <td><?php echo $data['customer_address']; ?></td>
                                             <td><?php echo $data['customer_bank']; ?></td>
                                             <td></td>

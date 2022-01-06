@@ -2,9 +2,10 @@
 include("partial/header.php");
 include("admin-menu.php");
 include("env.php")?>
-<div class="container px-4">
-    <div class="wrapper pt-5 text-center">
-        <h1>Dashboard</h1>
+<div class="container">
+    <div class="align-middle" style="padding-top: 150px;">
+    <div class="wrapper text-center">
+        <h1 class="py-3">Dashboard</h1>
             <?php 
                 if(isset($_SESSION['login']))
                 {
@@ -12,8 +13,8 @@ include("env.php")?>
                     unset($_SESSION['login']);
                 }
             ?>
-        <div class="row pt-3 pb-5 align-items-start">
-        <div class="col text-center">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+        <div class="col p-4">
 
             <?php 
             //Sql Query 
@@ -28,7 +29,7 @@ include("env.php")?>
             Kategori
             </div>
 
-        <div class="col text-center">
+        <div class="col p-4">
 
             <?php 
                 //Sql Query 
@@ -43,7 +44,7 @@ include("env.php")?>
             Produk
             </div>
 
-        <div class="col text-center">
+        <div class="col p-4">
                 
             <?php 
                 //Sql Query 
@@ -58,7 +59,7 @@ include("env.php")?>
             Jumlah Pesanan
             </div>
 
-        <div class="col text-center">
+        <div class="col p-4">
 
             <?php 
                 //Creat SQL Query to Get Total Revenue Generated
@@ -83,6 +84,7 @@ include("env.php")?>
             <div class="clearfix"></div>
             </div>
         </div>
+    </div>
     </div>
 </div>
 <?php include('partial/footer.php') ?>
